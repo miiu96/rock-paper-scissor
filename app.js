@@ -32,9 +32,7 @@ function win(user, computer) {
                           ${smallUserWord} beats ${convertToWord(computer)} 
                           ${smallComprWord}. You Win !!`;
     document.getElementById(user).classList.add('green-glow');
-    setTimeout(function(){
-        document.getElementById(user).classList.remove('green-glow');
-    }, 500)
+    setTimeout(() => document.getElementById(user).classList.remove('green-glow'), 500)
 }
 function lose(user, computer) {
     computerScore++;
@@ -47,16 +45,12 @@ function lose(user, computer) {
                           ${smallUserWord} loses to ${convertToWord(computer)} 
                           ${smallComprWord}. You lose... !!`;
     document.getElementById(user).classList.add('red-glow');
-    setTimeout(function(){
-        document.getElementById(user).classList.remove('red-glow');
-    }, 500)
+    setTimeout(() => document.getElementById(user).classList.remove('red-glow'), 500);
 }
 function drow(user) {
     result_p.innerHTML = `DRAW`;
     document.getElementById(user).classList.add('gray-glow');
-    setTimeout(function(){
-        document.getElementById(user).classList.remove('gray-glow');
-    }, 500)
+    setTimeout(() => document.getElementById(user).classList.remove('gray-glow'), 500);
 }
 
 function game(userChoise) {
@@ -82,17 +76,11 @@ function game(userChoise) {
 
 
 function main() {
-    rock_div.addEventListener('click', function(){
-        game("r")
-    })
+    rock_div.addEventListener('click', () => game("r"))
+
+    paper_div.addEventListener('click', () => game("p"))
     
-    paper_div.addEventListener('click', function(){
-        game("p")
-    })
-    
-    scissors_div.addEventListener('click', function(){
-        game("s")
-    })
+    scissors_div.addEventListener('click',() => game("s"))
 }
 
 
